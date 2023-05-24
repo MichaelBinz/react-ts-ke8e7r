@@ -28,6 +28,12 @@ const App: React.FC = () => {
     setTimer(null);
   };
 
+  const pauseTimer = () => {
+    clearInterval(timer);
+    setTimer(null);
+  };
+
+
   return (
     <PageWrapper>
       <Timer time={time} />
@@ -35,6 +41,8 @@ const App: React.FC = () => {
         running={timer != null}
         startTimer={startTimer}
         stopTimer={stopTimer}
+        resumeTimer={startTimer}
+        pauseTimer={pauseTimer}
       />
     </PageWrapper>
   );

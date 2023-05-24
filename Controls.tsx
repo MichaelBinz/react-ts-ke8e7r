@@ -4,11 +4,17 @@ const Controls: React.FC<{
   running: boolean;
   startTimer: () => void;
   stopTimer: () => void;
-}> = ({ running, startTimer, stopTimer }) => {
+}> = ({ running, startTimer, stopTimer, resumeTimer, pauseTimer }) => {
   if (running) {
-    return <button onClick={stopTimer}>Reset</button>;
+    return <div>
+      <button onClick={pauseTimer}>Pause</button><br />
+      <button onClick={stopTimer}>Reset</button>
+    </div>;
   } else {
-    return <button onClick={startTimer}>Start</button>;
+    return <div>
+      <button onClick={startTimer}>Start/Resume</button><br />
+      <button onClick={stopTimer}>Reset</button>
+    </div>;
   }
 };
 
